@@ -1,0 +1,57 @@
+# ============================================================
+# Brain Tumor MRI Classification - Project Configuration
+# ============================================================
+# NOTE: This project trains on CPU. GPU acceleration via
+# tensorflow-directml-plugin (for AMD GPUs on Windows) was evaluated
+# but hits an unresolved bug in the plugin itself (duplicate OpKernel
+# registration for StatelessRandomGetKeyCounter during model
+# construction). The plugin's development has been paused by
+# Microsoft, so this is a known limitation, not a bug in this project.
+# CPU training works correctly because the backbone is frozen
+# (freeze_backbone: true) - only the small classification head is
+# trained, so each epoch is dominated by fast forward passes rather
+# than full backpropagation through the backbone.
+# ============================================================
+
+# ---------- Dataset ----------
+dataset:
+  kaggle_handle: "masoudnickparvar/brain-tumor-mri-dataset"
+  data_dir: "data"
+  train_subdir: "Training"
+  test_subdir: "Testing"
+  classes: ["glioma", "meningioma", "notumor", "pituitary"]
+  image_size: [224, 224]     # height, width - standard input for all 4 backbones
+  batch_size: 32
+  val_split: 0.15            # carved out of the Training/ folder
+  seed: 42
+
+# ---------- Model ----------
+# `active_model` selects which backbone train.py builds/trains.
+# Valid values: resnet50 | vgg16 | densenet121 | efficientnetb0
+model:
+  active_model: "resnet50"
+  num_classes: 4
+  dropout_rate: 0.3
+  dense_units: 256
+  freeze_backbone: true      # transfer learning: freeze pretrained conv base
+  fine_tune_last_n_layers: 0 # set >0 for a fine-tuning pass after head training
+
+# ---------- Training ----------
+training:
+  epochs: 15
+  learning_rate: 0.0001
+  optimizer: "adam"
+  loss: "categorical_crossentropy"
+  early_stopping_patience: 4
+  reduce_lr_patience: 2
+
+# ---------- MLflow ----------
+mlflow:
+  experiment_name: "brain-tumor-mri-classification"
+  tracking_uri: "mlruns"
+
+# ---------- Paths ----------
+paths:
+  model_output_dir: "models"
+  artifacts_dir: "artifacts"
+  screenshots_dir: "screenshots"

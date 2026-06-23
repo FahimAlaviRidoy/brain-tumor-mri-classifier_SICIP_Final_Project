@@ -1,0 +1,58 @@
+# ============================================================
+# Core ML / DL
+# ------------------------------------------------------------
+# This project trains on CPU. GPU acceleration via
+# tensorflow-directml-plugin (for Windows + AMD GPUs) was evaluated
+# but the plugin has an unresolved bug (duplicate OpKernel
+# registration for StatelessRandomGetKeyCounter during model
+# construction) that prevents it from working with this model
+# architecture. The plugin's development has also been officially
+# paused by Microsoft. Plain tensorflow==2.10.0 is used on all
+# platforms for consistency and reproducibility.
+#
+# Training is still practical on CPU because the backbone is frozen
+# (see configs/config.yaml: freeze_backbone: true) - only a small
+# classification head is trained per epoch.
+# ============================================================
+tensorflow-cpu==2.10.0 ; sys_platform != "win32"
+tensorflow==2.10.0 ; sys_platform == "win32"
+
+# ============================================================
+# Experiment tracking
+# (pinned to a version compatible with tensorflow==2.10's
+#  protobuf<3.20 requirement)
+# ============================================================
+mlflow==2.3.2
+
+# ============================================================
+# Data handling / scientific stack
+# ============================================================
+numpy==1.23.5
+pandas==2.0.3
+scikit-learn==1.3.2
+Pillow==10.2.0
+opencv-python-headless==4.9.0.80
+matplotlib==3.7.4
+seaborn==0.13.2
+
+# ============================================================
+# Dataset download
+# ============================================================
+kagglehub==1.0.2
+
+# ============================================================
+# Config
+# ============================================================
+PyYAML==6.0.1
+
+# ============================================================
+# App / serving
+# (pinned to a version compatible with tensorflow==2.10's
+#  protobuf<3.20 requirement)
+# ============================================================
+streamlit==1.22.0
+
+# ============================================================
+# Misc utils
+# ============================================================
+tqdm==4.66.2

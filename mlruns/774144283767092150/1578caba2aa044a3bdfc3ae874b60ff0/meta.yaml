@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/brain-tumor-mri-classifier/mlruns/774144283767092150/1578caba2aa044a3bdfc3ae874b60ff0/artifacts
+end_time: 1782207843616
+entry_point_name: ''
+experiment_id: '774144283767092150'
+lifecycle_stage: active
+run_id: 1578caba2aa044a3bdfc3ae874b60ff0
+run_name: efficientnetb0_transfer_learning
+run_uuid: 1578caba2aa044a3bdfc3ae874b60ff0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1782204862046
+status: 3
+tags: []
+user_id: fahim

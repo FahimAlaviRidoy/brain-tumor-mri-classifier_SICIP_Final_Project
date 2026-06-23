@@ -1,0 +1,12 @@
+data/
+mlruns/
+notebooks/
+screenshots/
+.git/
+.gitignore
+__pycache__/
+*.pyc
+.venv/
+venv/
+README.md
+final_report.md

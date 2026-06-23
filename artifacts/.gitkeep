@@ -1,0 +1,4 @@
+This file ensures the artifacts/ directory exists in git.
+Evaluation plots, confusion matrices, and reports are generated here
+by running:
+    python src/evaluate.py

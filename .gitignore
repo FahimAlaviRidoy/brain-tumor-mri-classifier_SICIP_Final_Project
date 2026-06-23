@@ -1,0 +1,82 @@
+# ============================================================
+# Data - NEVER commit datasets
+# ============================================================
+data/*
+!data/.gitkeep
+
+# ============================================================
+# Models / large artifacts (regenerate via training script)
+# Keep folder structure with .gitkeep, ignore actual weight files
+# ============================================================
+models/*.h5
+models/*.keras
+models/*.pb
+models/*saved_model*
+!models/.gitkeep
+
+artifacts/*
+!artifacts/.gitkeep
+
+# ============================================================
+# NOTE: mlruns/ is intentionally NOT ignored.
+# MLflow experiment evidence (params, metrics, artifacts) must
+# be included in the repository per assignment requirements.
+# ============================================================
+
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ============================================================
+# Virtual environments
+# ============================================================
+venv/
+env/
+ENV/
+.venv/
+.env
+
+# ============================================================
+# Jupyter
+# ============================================================
+.ipynb_checkpoints/
+
+# ============================================================
+# OS / Editor
+# ============================================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# ============================================================
+# Logs
+# ============================================================
+*.log
+
+# ============================================================
+# Kaggle credentials - NEVER commit API keys
+# ============================================================
+kaggle.json
+.kaggle/
