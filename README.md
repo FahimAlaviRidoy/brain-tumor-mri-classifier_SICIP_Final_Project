@@ -83,7 +83,7 @@ final-project/
 
 ```bash
 # 1. Clone the repo
-git clone <your-repo-url>
+git clone https://github.com/FahimAlaviRidoy/brain-tumor-mri-classifier_SICIP_Final_Project.git
 cd final-project
 
 # 2. Create and activate a virtual environment
@@ -130,10 +130,12 @@ This uses `kagglehub` to pull the dataset into `data/Training/` and
 `data/Testing/`. On first run it may prompt for Kaggle API credentials:
 
 1. Go to <https://www.kaggle.com/settings> → **Create New Token**
-2. This downloads `kaggle.json`
-3. Place it at `~/.kaggle/kaggle.json` (Linux/Mac) or
-   `C:\Users\<you>\.kaggle\kaggle.json` (Windows)
-4. Re-run the script
+2. open terminal in your pc and run this with your kaggle API token.
+```bash
+mkdir $env:USERPROFILE\.kaggle -Force
+   "<your-new-token>" | Out-File -FilePath $env:USERPROFILE\.kaggle\access_token -Encoding ascii -NoNewline
+
+```
 
 `data/` is excluded from version control via `.gitignore` — every reviewer
 must run this script after cloning.
@@ -356,18 +358,7 @@ view the prediction.
 
 ## 13. Final Project Report
 
-The completed final report (using the
-[`SICIP_TEMPLATE_final_report`](https://www.rb.gy/lie1pp) template) is
-included in this repository as `final_report.md` and submitted separately
-as a PDF named `SICIP_<YOUR_NAME>_<YOUR_ID>.pdf` per submission
-instructions.
+The completed final report is included in this repository as `final_report.md` and submitted separately as a PDF.
 
 ---
 
-## 14. Team Contribution
-
-*(Solo project — update this section if working in a team.)*
-
-| Member | Contribution |
-|---|---|
-| — | Dataset pipeline, model architectures, training, MLflow tracking, evaluation, Streamlit app, Dockerization, documentation |
