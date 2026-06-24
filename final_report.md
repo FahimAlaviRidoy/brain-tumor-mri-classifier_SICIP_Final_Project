@@ -2,8 +2,8 @@
 
 **Title:** Multi-Class Brain Tumor Classification Using Transfer Learning on MRI Images
 
-**Student Name:** _____________________
-**Student ID:** _____________________
+**Student Name:** Fahim Alavi Ridoy
+**Student ID:** 
 **Program:** Skills for Industry Competitiveness and Innovation Program (SICIP), BRAC University
 **Course:** Machine Learning and Deep Learning Certification
 **Submission Date:** _____________________

@@ -209,23 +209,38 @@ Then open `http://localhost:5000` in a browser.
 > from earlier runs, so no retraining was needed for backbones that had
 > already saved successfully before this fix.
 
-### Screenshots
+Start app locally
+```bash
+streamlit run app/app.py
+```
 
-> 📸 *Add screenshots here after running training:*
-> - `screenshots/mlflow_runs.png` — the MLflow experiment list showing all 4 runs
-> - `screenshots/training_result.png` — a run's metrics/parameters detail page
+
+### Screenshots
+mlflow running for this project:
+
+
+<img src="screenshots\mlflow.png" alt="Alt text" width="500">
 
 At least **4 runs** are produced (one per backbone), satisfying the "≥2
 experiments" requirement with room for direct architecture comparison.
+
+Sample output of this project: 
+
+<img src="screenshots\sample-output.png" alt="Alt text" width="500">
 
 After training all 4 backbones, generate a side-by-side comparison:
 
 ```bash
 python src/compare_models.py
 ```
-
 This produces `artifacts/model_comparison.csv` and
 `artifacts/model_comparison_chart.png`.
+
+
+
+<img src="screenshots\training-results.png" alt="Alt text" width="500">
+
+
 
 ---
 
@@ -261,8 +276,7 @@ Outputs (saved to `artifacts/`):
 - `{model_name}_confusion_matrix.png`
 - `{model_name}_classification_report.json` / `.txt`
 
-> 📸 *Add a screenshot of a confusion matrix here, e.g.
-> `screenshots/training_result.png` or a dedicated `evaluation_result.png`.*
+
 
 **Interpretation:** Compare test accuracy and per-class F1 scores across
 the four backbones using `artifacts/model_comparison.csv`. Pay particular
@@ -316,14 +330,18 @@ docker run -p 8501:8501 brain-tumor-mri-app:1.0
 Then open `http://localhost:8501` in a browser, upload an MRI image, and
 view the prediction.
 
-> ⚠️ **Important:** Train at least one model (`python src/train.py
-> --model_name resnet50`) **before** building the Docker image — the
-> `models/` and `artifacts/` directories are copied into the image and
-> must contain a trained `.weights.h5` file and `class_indices.json`.
+Docker running:
 
-> 📸 *Add a screenshot here:* `screenshots/docker_app_running.png`
-> showing the running container and a successful prediction, plus
-> `screenshots/demo_output.png` showing the upload + result UI.
+
+<img src="screenshots\Docker-running.png" alt="Alt text" width="500">
+
+
+
+Sample output from Docker Running the app: 
+
+
+
+<img src="screenshots\sample-output2.png" alt="Alt text" width="500">
 
 ---
 
