@@ -179,6 +179,8 @@ All four training runs (one per backbone) were tracked under the `brain-tumor-mr
 - **Number of runs:** 4 independent runs
 - **Best run:** Selected based on the highest test accuracy on the held-out `Testing/` split
 
+<img src="screenshots\mlflow.png" alt="Alt text" width="500">
+
 *[Picture: MLflow_runs]*
 
 ### 4.2 Evaluation Results
@@ -214,14 +216,43 @@ Model comparison results. The table below summarizes test accuracy and loss acro
 
 The results indicate that deeper residual networks (ResNet50) transfer more effectively to brain tumor classification than classical (VGG16) or compound-scaled architectures (EfficientNetB0) under frozen-backbone transfer learning conditions.
 
+<img src="screenshots\training-results.png" alt="Alt text" width="500">
+
 *[Picture: All Models Results — model comparison table by test accuracy]*
 
 **Confusion Matrices and Training Curves:**
 
+
+
+<img src="artifacts\densenet121_training_curves.png" alt="Alt text" width="500">
+<img src="artifacts\densenet121_confusion_matrix.png" alt="Alt text" width="500">
+
 - *[Picture: Confusion Matrix — DenseNet121, with accuracy/loss curves]*
+
+
+
+<img src="artifacts\efficientnetb0_training_curves.png" alt="Alt text" width="500">
+<img src="artifacts\efficientnetb0_confusion_matrix.png" alt="Alt text" width="500">
+
 - *[Picture: Confusion Matrix — EfficientNetB0, with accuracy/loss curves]*
+
+
+
+<img src="artifacts\resnet50_training_curves.png" alt="Alt text" width="500">
+<img src="artifacts\resnet50_confusion_matrix.png" alt="Alt text" width="500">
+
 - *[Picture: Confusion Matrix — ResNet50, with accuracy/loss curves]*
+
+
+
+<img src="artifacts\vgg16_training_curves.png" alt="Alt text" width="500">
+<img src="artifacts\vgg16_confusion_matrix.png" alt="Alt text" width="500">
+
 - *[Picture: Confusion Matrix — VGG16, with accuracy/loss curves]*
+
+
+
+<img src="artifacts\model_comparison_chart.png" alt="Alt text" width="500">
 
 *[Picture: Bar chart — Test Accuracy by Backbone Architecture (ResNet50: 0.885, VGG16: 0.868, DenseNet121: 0.859, EfficientNetB0: 0.848)]*
 
@@ -250,6 +281,9 @@ The prediction UI is built with Streamlit (`app/app.py`). Users can:
 - Upload an MRI image file.
 - Immediately see the predicted tumor class and a per-class confidence breakdown.
 
+<img src="screenshots\sample-output.png" alt="Alt text" width="500">
+
+
 *[Picture: uploaded MRI image and prediction output — example shows ResNet50 selected, predicting "Glioma" with 100.0% confidence]*
 
 ### 5.3 Docker Serving
@@ -257,6 +291,8 @@ The prediction UI is built with Streamlit (`app/app.py`). Users can:
 The Streamlit prediction application is fully containerized using Docker. The repository contains a `Dockerfile` that bundles the application code, configuration, trained model weights, and class-index mapping.
 
 Build and run instructions are documented in the project README. The container exposes the Streamlit UI on port 8501.
+
+<img src="screenshots\Docker-running.png" alt="Alt text" width="500">
 
 *[Picture: Docker container terminal output confirming the app is running]*
 
@@ -363,19 +399,19 @@ This project demonstrates a complete, reproducible deep learning pipeline for mu
 
 ### A. Final Submission Checklist
 
-- [x] Selected one approved project domain.
-- [x] Public GitHub repository is accessible.
-- [x] Dataset is not committed to GitHub.
-- [x] Data can be downloaded into `data/`.
-- [x] Training uses MLflow.
-- [x] `mlruns/` is included and not ignored.
-- [x] At least two MLflow runs are logged.
-- [x] Report includes MLflow screenshot.
-- [x] Prediction app supports sample upload/input.
-- [x] Prediction app is served using Docker.
-- [x] Report includes Docker app screenshot.
-- [x] Course techniques used are clearly mentioned.
-- [x] Deadline is respected: 25 June 2026.
+- [✅] Selected one approved project domain.
+- [✅] Public GitHub repository is accessible.
+- [✅] Dataset is not committed to GitHub.
+- [✅] Data can be downloaded into `data/`.
+- [✅] Training uses MLflow.
+- [✅] `mlruns/` is included and not ignored.
+- [✅] At least two MLflow runs are logged.
+- [✅] Report includes MLflow screenshot.
+- [✅] Prediction app supports sample upload/input.
+- [✅] Prediction app is served using Docker.
+- [✅] Report includes Docker app screenshot.
+- [✅] Course techniques used are clearly mentioned.
+- [✅] Deadline is respected: 25 June 2026.
 
 ### B. Final Notes
 
