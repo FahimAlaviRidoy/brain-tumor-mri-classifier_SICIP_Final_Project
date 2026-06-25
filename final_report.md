@@ -224,35 +224,35 @@ The results indicate that deeper residual networks (ResNet50) transfer more effe
 
 
 
-<img src="artifacts\densenet121_training_curves.png" alt="Alt text" width="500">
-<img src="artifacts\densenet121_confusion_matrix.png" alt="Alt text" width="500">
+<img src="screenshots\Models_results\densenet121_training_curves.png" alt="Alt text" width="500">
+<img src="screenshots\Models_results\densenet121_confusion_matrix.png" alt="Alt text" width="500">
 
 - *[Picture: Confusion Matrix — DenseNet121, with accuracy/loss curves]*
 
 
 
-<img src="artifacts\efficientnetb0_training_curves.png" alt="Alt text" width="500">
-<img src="artifacts\efficientnetb0_confusion_matrix.png" alt="Alt text" width="500">
+<img src="screenshots\Models_results\efficientnetb0_training_curves.png" alt="Alt text" width="500">
+<img src="screenshots\Models_results\efficientnetb0_confusion_matrix.png" alt="Alt text" width="500">
 
 - *[Picture: Confusion Matrix — EfficientNetB0, with accuracy/loss curves]*
 
 
 
-<img src="artifacts\resnet50_training_curves.png" alt="Alt text" width="500">
-<img src="artifacts\resnet50_confusion_matrix.png" alt="Alt text" width="500">
+<img src="screenshots\Models_results\resnet50_training_curves.png" alt="Alt text" width="500">
+<img src="screenshots\Models_results\resnet50_confusion_matrix.png" alt="Alt text" width="500">
 
 - *[Picture: Confusion Matrix — ResNet50, with accuracy/loss curves]*
 
 
 
-<img src="artifacts\vgg16_training_curves.png" alt="Alt text" width="500">
-<img src="artifacts\vgg16_confusion_matrix.png" alt="Alt text" width="500">
+<img src="screenshots\Models_results\vgg16_training_curves.png" alt="Alt text" width="500">
+<img src="screenshots\Models_results\vgg16_confusion_matrix.png" alt="Alt text" width="500">
 
 - *[Picture: Confusion Matrix — VGG16, with accuracy/loss curves]*
 
 
 
-<img src="artifacts\model_comparison_chart.png" alt="Alt text" width="500">
+<img src="screenshots\Models_results\model_comparison_chart.png" alt="Alt text" width="500">
 
 *[Picture: Bar chart — Test Accuracy by Backbone Architecture (ResNet50: 0.885, VGG16: 0.868, DenseNet121: 0.859, EfficientNetB0: 0.848)]*
 
