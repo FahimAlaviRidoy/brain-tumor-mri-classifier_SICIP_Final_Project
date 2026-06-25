@@ -379,8 +379,14 @@ This project demonstrates a complete, reproducible deep learning pipeline for mu
 
 ### B. Final Notes
 
-This project is mandatory for certification.
+This project — *Multi-Class Brain Tumor Classification Using Transfer Learning on MRI Images* — was completed and submitted on 25 June 2026, meeting the SICIP certification deadline.
 
-The certification program ends on 26 June 2026, so the deadline of 25 June 2026 will be strictly maintained.
+**Summary of completed work:**
 
-There may be a project review on 26 June 2026. Be ready to explain your code, training pipeline, MLflow tracking, Docker setup, prediction app, report screenshots, and final results.
+- Four CNN backbones (ResNet50, VGG16, DenseNet121, EfficientNetB0) were trained as frozen feature extractors on the Brain Tumor MRI Dataset (7,023 images, 4 classes), with all runs tracked in MLflow under the `brain-tumor-mri-classification` experiment.
+- **ResNet50 was selected as the best model**, achieving 88.50% test accuracy and 93.57% validation accuracy, outperforming VGG16 (86.81%), DenseNet121 (85.88%), and EfficientNetB0 (84.81%).
+- A Streamlit prediction app (`app/app.py`) was built supporting backbone selection, MRI image upload, and per-class confidence display, sharing preprocessing logic with the CLI predictor (`src/predict.py`).
+- The app was fully containerized with Docker, exposing the Streamlit UI on port 8501, with a verified terminal screenshot confirming the container runs successfully.
+- The repository is structured for reproducibility, with `mlruns/` deliberately committed as evidence of experiment tracking and `data/` excluded per `.gitignore` rules.
+
+A live code review is scheduled for 26 June 2026, the final day of the certification program. The presenter should be ready to walk through: the training pipeline and transfer learning setup (`src/train.py`, `src/models.py`), the MLflow experiment comparison across all four backbones, the Docker build/run process, the Streamlit prediction app end-to-end, and the model comparison results — including the noted limitations (2D-only classification, frozen-backbone-only training due to CPU constraints, and the cross-dataset origin of the `notumor` class).
